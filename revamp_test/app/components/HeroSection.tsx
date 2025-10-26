@@ -1,12 +1,34 @@
 'use client';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from './ui';
+import VideoBackground from './VideoBackground';
 
 const HeroSection: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
   return (
     <section
-      className="h-screen w-full relative overflow-hidden bg-slate-50 dark:bg-black"
+      className="h-screen w-full relative overflow-hidden"
     >
+      {/* Video Background - only render after component has mounted to prevent hydration mismatch */}
+      {mounted && (
+        <VideoBackground
+          src="/hero-background.mp4"
+          className="opacity-40 dark:opacity-30"
+        />
+      )}
+      
+      {/* Placeholder for server-side rendering */}
+      {!mounted && (
+        <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900"></div>
+      )}
+      
+      {/* Overlay gradient for better text readability */}
+      <div className="absolute inset-0 bg-slate-50/70 dark:bg-black/80 z-[1]"></div>
       {/* Content Container */}
       <div className="relative z-10 h-full flex flex-col items-start justify-center px-4 sm:px-6 lg:px-8">
         <div className="text-left max-w-4xl">
