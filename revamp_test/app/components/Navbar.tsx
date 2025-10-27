@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <nav className="fixed top-4 left-4 right-4 z-[100] bg-slate-100/90 dark:bg-slate-800/70 backdrop-blur-md border border-slate-300/30 dark:border-slate-700/30 rounded-xl shadow-lg transition-colors duration-300">
+    <nav className="fixed top-4 left-4 right-4 z-[100] bg-slate-900/70 backdrop-blur-md border border-slate-700/30 rounded-xl shadow-lg transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-end items-center h-16 gap-12">
           {/* Logo Section */}
@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
                   ))}
                 </div>
               </div>
-              <div className="text-xs text-slate-500 dark:text-slate-400 font-light ml-1 transition-opacity duration-200 group-hover:opacity-80">
+              <div className="text-xs text-slate-400 font-light ml-1 transition-opacity duration-200 group-hover:opacity-80">
                 by Evam Labs
               </div>
             </Link>
@@ -50,7 +50,7 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="relative text-slate-700 dark:text-slate-300 hover:text-primary-500 dark:hover:text-primary-300 transition-colors duration-200 font-normal text-base group"
+                className="relative text-slate-300 hover:text-primary-300 transition-colors duration-200 font-normal text-base group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-gradient-to-r from-primary-400/80 to-secondary-400/80 group-hover:w-full transition-all duration-300 blur-[3px] shadow-[0_0_8px_rgba(45,212,191,0.7)]" />
@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={toggleMenu}
-              className="text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white p-1.5 transition-colors duration-200"
+              className="text-slate-300 hover:text-white p-1.5 transition-colors duration-200"
               aria-label="Toggle menu"
             >
               <div className="relative w-4 h-4">
@@ -99,8 +99,8 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu Panel */}
       <div
         className={`fixed top-[calc(4rem+1px)] right-4 w-64 md:hidden z-[100]
-          bg-slate-100/95 dark:bg-slate-800/95 backdrop-blur-md
-          border border-slate-300/30 dark:border-slate-700/30 rounded-lg shadow-lg
+          bg-slate-800/95 backdrop-blur-md
+          border border-slate-700/30 rounded-lg shadow-lg
           transform transition-all duration-300 ease-in-out origin-top-right
           ${
             isMenuOpen
@@ -119,13 +119,13 @@ const Navbar: React.FC = () => {
               key={link.name}
               href={link.href}
               onClick={closeMenu}
-              className="block px-4 py-2 text-base text-slate-700 dark:text-slate-300 hover:text-primary-500 dark:hover:text-primary-300 hover:bg-slate-200 dark:hover:bg-slate-700/50 rounded-lg transition-all duration-200"
+              className="block px-4 py-2 text-base text-slate-300 hover:text-primary-300 hover:bg-slate-700/50 rounded-lg transition-all duration-200"
             >
               {link.name}
             </Link>
           ))}
-          <div className="pt-2 border-t border-slate-300 dark:border-slate-700/30">
-            <button className="w-full px-4 py-2 text-base text-primary-400 hover:text-primary-300 bg-slate-200 dark:bg-slate-700/30 hover:bg-slate-300 dark:hover:bg-slate-700/50 rounded-lg transition-all duration-200">
+          <div className="pt-2 border-t border-slate-700/30">
+            <button className="w-full px-4 py-2 text-base text-primary-400 hover:text-primary-300 bg-slate-700/30 hover:bg-slate-700/50 rounded-lg transition-all duration-200">
               Try Propheus
             </button>
           </div>
