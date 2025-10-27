@@ -1,68 +1,76 @@
 import type { NextConfig } from "next";
+console.log(">>> Running Next.js from:", __dirname);
+
+// Optional: uncomment to verify workspace path
+// console.log(">>> Running Next.js from:", __dirname);
 
 const nextConfig: NextConfig = {
-  // Enable latest Next.js 16+ features
-  experimental: {
-    // Optimize package imports for smaller bundles
-    optimizePackageImports: ['framer-motion', 'gsap', '@gsap/react'],
+  // ✅ Explicitly define the project root to fix workspace issues
+  turbopack: {
+    root: __dirname,
   },
 
-  // Enable Component-level caching (replaces PPR in Next.js 16)
+  // ✅ Enable latest Next.js 16+ experimental optimizations
+  experimental: {
+    optimizePackageImports: ["framer-motion", "gsap", "@gsap/react"],
+  },
+
+  // ✅ Component-level caching (replaces PPR)
   cacheComponents: true,
 
-  // Image optimization configuration
+  // ✅ Image optimization
   images: {
-    formats: ['image/webp', 'image/avif'],
+    formats: ["image/webp", "image/avif"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    minimumCacheTTL: 31536000, // 1 year for optimized images
-    dangerouslyAllowSVG: true, // Allow SVG images from external sources
-    contentDispositionType: 'attachment',
+    minimumCacheTTL: 31536000,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        pathname: '/**',
+        protocol: "https",
+        hostname: "placehold.co",
+        pathname: "/**",
       },
     ],
   },
 
-  // Cache headers for static assets
+  // ✅ Custom cache headers
   async headers() {
     return [
       {
-        // Cache static images
-        source: '/:all*(svg|jpg|jpeg|png|gif|ico|webp|avif)',
+        source: "/:all*(svg|jpg|jpeg|png|gif|ico|webp|avif)",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
       {
-        // Cache Next.js static files
-        source: '/_next/static/:path*',
+        source: "/_next/static/:path*",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
       {
-        // Cache fonts
-        source: '/:all*(woff|woff2|ttf|otf|eot)',
+        source: "/:all*(woff|woff2|ttf|otf|eot)",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
     ];
   },
+
+  // ✅ React strict mode for better debugging
+  reactStrictMode: true,
 };
 
 export default nextConfig;

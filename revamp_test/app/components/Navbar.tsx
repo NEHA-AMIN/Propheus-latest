@@ -42,7 +42,6 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation Links */}
           <div className="hidden md:flex items-center justify-end space-x-12">
             {[
-              { name: 'Solutions', href: '/solutions' },
               { name: 'Industries', href: '/industries' },
               { name: 'Resources', href: '/resources' },
               { name: 'About', href: '/about' },
@@ -60,13 +59,13 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Theme Toggle & CTA (Desktop) */}
+          {/* Theme Toggle & CTA (Desktop)
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
             <button className="bg-transparent border border-slate-400 dark:border-slate-500 hover:border-primary-400 hover:bg-slate-200 dark:hover:bg-slate-800/30 text-slate-700 dark:text-slate-300 hover:text-primary-500 dark:hover:text-white font-normal px-5 py-2 rounded-md transition-all duration-200 text-sm">
               Try Propheus
             </button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
@@ -111,7 +110,6 @@ const Navbar: React.FC = () => {
       >
         <div className="p-4 space-y-4">
           {[
-            { name: 'Solutions', href: '/solutions' },
             { name: 'Industries', href: '/industries' },
             { name: 'Resources', href: '/resources' },
             { name: 'About', href: '/about' },

@@ -15,13 +15,13 @@ const timelineSteps: TimelineStep[] = [
     step: 1,
     title: 'Context tuning',
     description: 'Align data to your industry, domain, and question (retail demand, site selection, neighborhood enrichment, network planning, etc.).',
-    imageUrl: 'https://placehold.co/600x300/0f172a/2dd4bf?text=Context+Tuning'
+    imageUrl: '/context_tuning.png'
   },
   {
     step: 2,
     title: 'Continuous curation',
     description: 'Assemble live signals into Walkability, Safety, Neighborhood Vibe, Visit Momentum, and more - ready to plug into models and workflows.',
-    imageUrl: 'https://placehold.co/600x300/0f172a/22d3ee?text=Continuous+Curation'
+    imageUrl: '/curation.png'
   },
   {
     step: 3,

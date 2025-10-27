@@ -1,6 +1,8 @@
+
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { BackgroundPaths } from "@/components/ui/shadcn-io/background-paths";
 import { useTheme } from "../providers/ThemeProvider";
 
@@ -237,6 +239,25 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({
       {/* Main Content Section */}
       <section className="relative bg-black transition-colors duration-500">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 py-16 sm:py-24">
+          {/* Page Header - THIS IS WHAT YOU'RE LOOKING FOR */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-teal-400 via-teal-500 to-teal-300 bg-clip-text text-transparent tracking-tight">
+              Resources page
+            </h2>
+            <p className="mt-4 text-base md:text-lg bg-gradient-to-r from-teal-200 via-teal-400 to-teal-200 bg-clip-text text-transparent">
+              Find out more about Propheus in action
+            </p>
+            <p className="mt-1 text-base md:text-lg bg-gradient-to-r from-teal-200 via-teal-400 to-teal-200 bg-clip-text text-transparent">
+              from our archive of blogs, videos and more
+            </p>
+          </motion.div>
+
+          {/* Rest of your content... */}
 
           {/* Featured Content */}
           <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1fr] gap-6 md:gap-8 mb-12">
@@ -270,31 +291,7 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({
             </div>
           </div>
 
-          {/* Category Filters (kept for additional filtering) */}
-          <div className="flex flex-wrap items-center gap-3 justify-center">
-            {[
-              "All",
-              "Banking & Financial services",
-              "Retail", 
-              "Insurance",
-              "Education",
-              "Home Services",
-              "Health & Fitness",
-              "Recruitment",
-              "Other",
-            ].map((label, i) => (
-              <button
-                key={label}
-                className={`inline-flex items-center rounded-full px-4 py-2 text-sm font-medium border transition-all duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
-                  i === 0
-                    ? "bg-teal-500 text-white border-teal-500 hover:bg-teal-600 focus:ring-teal-500 shadow-lg"
-                    : "bg-gray-900/60 text-gray-200 border-gray-700 hover:bg-gray-800 hover:shadow-md focus:ring-gray-500 backdrop-blur-sm"
-                }`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
+          {/* Category filter buttons removed per request */}
         </div>
 
         {/* Footer slot */}
