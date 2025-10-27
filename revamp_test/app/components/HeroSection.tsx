@@ -18,19 +18,12 @@ const HeroSection: React.FC = () => {
       {mounted && (
         <VideoBackground
           src="/hero-background.mp4"
-          className="opacity-40 dark:opacity-30"
+          className=""
         />
       )}
       
-      {/* Placeholder for server-side rendering */}
-      {!mounted && (
-        <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900"></div>
-      )}
-      
-      {/* Overlay gradient for better text readability */}
-      <div className="absolute inset-0 bg-slate-50/70 dark:bg-black/80 z-[1]"></div>
-      {/* Content Container */}
-      <div className="relative z-10 h-full flex flex-col items-start justify-center px-4 sm:px-6 lg:px-8">
+      {/* Content Container - ensure no overlay */}
+      <div className="relative z-[2] h-full flex flex-col items-start justify-center px-4 sm:px-6 lg:px-8 bg-transparent">
         <div className="text-left max-w-4xl">
           {/* Headline */}
           <h2 className="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-slate-100 mb-6 leading-tight">

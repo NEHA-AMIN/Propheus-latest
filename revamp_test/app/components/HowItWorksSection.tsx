@@ -15,13 +15,13 @@ const timelineSteps: TimelineStep[] = [
     step: 1,
     title: 'Context tuning',
     description: 'Align data to your industry, domain, and question (retail demand, site selection, neighborhood enrichment, network planning, etc.).',
-    imageUrl: 'https://placehold.co/600x300/0f172a/2dd4bf?text=Context+Tuning'
+    imageUrl: '/context_tuning.png'
   },
   {
     step: 2,
     title: 'Continuous curation',
     description: 'Assemble live signals into Walkability, Safety, Neighborhood Vibe, Visit Momentum, and more - ready to plug into models and workflows.',
-    imageUrl: 'https://placehold.co/600x300/0f172a/22d3ee?text=Continuous+Curation'
+    imageUrl: '/curation.png'
   },
   {
     step: 3,
@@ -51,18 +51,18 @@ const HowItWorksSection: React.FC = () => {
       }}
     >
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-slate-200/60 dark:bg-slate-950/60 border-y border-slate-300 dark:border-slate-800"></div>
+      <div className="absolute inset-0 bg-slate-950/90 dark:bg-slate-950/60 border-y border-slate-900 dark:border-slate-800"></div>
       
       <div className="relative z-10 container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h3 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 mb-6 leading-tight">
+          <h3 className="text-4xl md:text-5xl font-bold text-white dark:text-white mb-6 leading-tight">
             Our 3-Step{' '}
             <span className="bg-gradient-to-r from-teal-400 to-cyan-400 text-transparent bg-clip-text">
               Inference Process
             </span>
           </h3>
-          <p className="text-lg md:text-xl text-slate-700 dark:text-slate-400 max-w-4xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg md:text-xl text-gray-200 dark:text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8">
             Digital Atlas orchestrates agents that continuously ingest, validate, and fuse multimodal signals in a domain-aware way - then convert them into action:
           </p>
         </div>
@@ -105,12 +105,12 @@ const HowItWorksSection: React.FC = () => {
                   viewport={{ once: true, margin: "-100px" }}
                 >
                   {/* Title */}
-                  <h4 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100">
+                  <h4 className="text-2xl md:text-3xl font-bold text-white dark:text-white">
                     {step.title}
                   </h4>
 
                   {/* Description */}
-                  <p className="text-slate-700 dark:text-slate-400 text-lg leading-relaxed">
+                  <p className="text-gray-200 dark:text-gray-200 text-lg leading-relaxed">
                     {step.description}
                   </p>
 

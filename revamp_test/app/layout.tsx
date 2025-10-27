@@ -23,7 +23,7 @@ export default function RootLayout({
       <head>
         <ThemeScript />
       </head>
-      <body className="antialiased bg-slate-50 dark:bg-slate-950 min-h-screen transition-colors duration-300">
+      <body className="antialiased bg-blue-950 dark:bg-slate-950 min-h-screen transition-colors duration-300">
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>

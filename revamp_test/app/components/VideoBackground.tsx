@@ -36,15 +36,16 @@ export default function VideoBackground({ src, className = "" }: VideoBackground
   }, []);
 
   return (
-    <div className="absolute inset-0 w-full h-full overflow-hidden">
+    <div className="absolute inset-0 w-full h-full overflow-hidden bg-transparent">
       <video
         ref={videoRef}
-        className={`absolute inset-0 w-full h-full object-cover ${className}`}
+        className={`absolute inset-0 w-full h-full object-cover z-[1] ${className}`}
         autoPlay
         muted
         loop
         playsInline
         onLoadedData={() => setIsLoaded(true)}
+        style={{ opacity: 1 }}
       >
         <source src={src} type="video/mp4" />
         Your browser does not support the video tag.

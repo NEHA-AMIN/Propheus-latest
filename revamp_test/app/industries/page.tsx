@@ -1,7 +1,7 @@
 'use client';
 
-import IndustriesPage from '../components/IndustriesPage';
+import NewIndustriesPage from '../components/NewIndustriesPage';
 
 export default function Industries() {
-  return <IndustriesPage />;
+  return <NewIndustriesPage />;
 }

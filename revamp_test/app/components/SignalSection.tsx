@@ -28,7 +28,7 @@ const SignalSection: React.FC = () => {
   return (
     <section
       id="signal"
-      className="relative overflow-hidden bg-slate-100 dark:bg-slate-950 py-28 sm:py-32"
+      className="relative overflow-hidden bg-slate-950 dark:bg-slate-950 py-28 sm:py-32"
       aria-label="Subscribe to The Signal monthly intelligence briefing"
     >
       {/* Atmospheric visual: subtle teal signal waves behind headline */}
@@ -60,13 +60,13 @@ const SignalSection: React.FC = () => {
         <div className="mx-auto text-center max-w-3xl">
           {/* Animated Headline with SplitText */}
           {hasAnimated ? (
-            <h4 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight">
+            <h4 className="text-4xl md:text-5xl font-bold text-white dark:text-white tracking-tight">
               If you've come this far, it means you found us..Interesting!
             </h4>
           ) : (
             <SplitText
               text="If you've come this far, it means you found us..Interesting!"
-              className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100 tracking-tight"
+              className="text-4xl md:text-5xl font-bold text-white dark:text-white tracking-tight"
               delay={20}
               duration={0.4}
               ease="power2.out"
@@ -83,7 +83,7 @@ const SignalSection: React.FC = () => {
 
           {/* Description */}
           <motion.p
-            className="mt-6 text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed"
+            className="mt-6 text-lg md:text-xl text-gray-200 dark:text-gray-200 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ 
               opacity: 1, 
@@ -127,7 +127,7 @@ const SignalSection: React.FC = () => {
                 Get The Signal
               </Button>
             </div>
-            <p className="mt-3 text-sm text-slate-600 dark:text-slate-500">No spam. Only the signal.</p>
+            <p className="mt-3 text-sm text-gray-300 dark:text-gray-300">No spam. Only the signal.</p>
           </motion.form>
         </div>
       </div>

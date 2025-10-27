@@ -1,6 +1,7 @@
 'use client';
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Card, CardHeader, CardContent, CardFooter, Avatar } from './ui';
 
 type TestimonialCard = {
   id: number;
@@ -21,7 +22,7 @@ const testimonialData: TestimonialCard[] = [
     name: "Sarah Chen",
     title: "VP of Operations",
     company: "RetailMax",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+    avatar: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=400&h=400&fit=crop&crop=face",
     companyLogo: "🏪",
     size: 'small',
     position: { row: 0, col: 0 }
@@ -87,7 +88,7 @@ const testimonialData: TestimonialCard[] = [
     name: "Rachel Park",
     title: "VP of Real Estate",
     company: "Fashion Forward",
-    avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face",
     companyLogo: "👗",
     size: 'wide',
     position: { row: 1, col: 2 }
@@ -106,63 +107,60 @@ const testimonialData: TestimonialCard[] = [
 ];
 
 function TestimonialCard({ testimonial, index }: { testimonial: TestimonialCard; index: number }) {
+  // Adjust card height based on content length
+  const getCardHeight = () => {
+    const quoteLength = testimonial.quote.length;
+    if (testimonial.size === 'wide') return 'min-h-[220px]';
+    if (quoteLength > 150) return 'min-h-[280px]';
+    if (quoteLength > 100) return 'min-h-[240px]';
+    return 'min-h-[200px]';
+  };
+
   const sizeClasses = {
-    small: 'w-[180px] h-[180px]',
-    medium: 'w-[210px] h-[210px]', 
-    large: 'w-[260px] h-[260px]',
-    wide: 'w-[420px] h-[300px]'
+    small: 'w-full',
+    medium: 'w-full',
+    large: 'w-full',
+    wide: 'w-full'
   };
 
   return (
     <motion.div
-      className={`${sizeClasses[testimonial.size]} relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900/80 backdrop-blur-sm border border-slate-200 dark:border-slate-800/50 shadow-lg`}
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ 
-        duration: 0.6, 
+      transition={{
+        duration: 0.6,
         ease: [0.25, 0.1, 0.25, 1],
-        delay: index * 0.1 
+        delay: index * 0.1
       }}
       viewport={{ once: true, amount: 0.3 }}
-      whileHover={{ 
+      whileHover={{
         scale: 1.02,
         transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }
       }}
-      style={{
-        boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.06)'
-      }}
+      className="h-full"
     >
-      <motion.div
-        className="absolute -inset-[2px] rounded-2xl opacity-0 z-0"
-        style={{
-          background: 'radial-gradient(220px 140px at 50% 50%, rgba(45, 212, 191, 0.12), transparent 60%)',
-          filter: 'blur(8px)'
-        }}
-        whileHover={{ opacity: 1 }}
-        transition={{ duration: 0.28, ease: [0.25, 0.1, 0.25, 1] }}
-      />
-      
-      <div className="relative z-10 p-4 h-full flex flex-col gap-3">
-        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-slate-200 to-slate-300 dark:from-slate-800 dark:to-slate-700 border border-slate-300 dark:border-white/8 overflow-hidden flex-shrink-0">
-          <img 
-            src={testimonial.avatar} 
-            alt={testimonial.name}
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <Card className={`${sizeClasses[testimonial.size]} ${getCardHeight()} overflow-hidden backdrop-blur-sm h-full flex flex-col`}>
+        <CardHeader className="pb-2">
+          <div className="flex items-center gap-3">
+            <Avatar
+              src={testimonial.avatar}
+              alt={testimonial.name}
+              fallback={testimonial.name}
+            />
+            <div>
+              <p className="text-white text-sm font-semibold">{testimonial.name}</p>
+              <p className="text-gray-400 text-xs">{testimonial.title}</p>
+              <p className="text-teal-400 text-xs font-medium uppercase tracking-wider">{testimonial.company}</p>
+            </div>
+          </div>
+        </CardHeader>
         
-        <div className="flex-1">
-          <p className="text-slate-800 dark:text-slate-200 text-sm leading-snug font-medium">
+        <CardContent className="flex-1">
+          <p className="text-gray-200 text-sm leading-relaxed">
             {testimonial.quote}
           </p>
-        </div>
-        
-        <div className="mt-auto">
-          <p className="text-slate-900 dark:text-slate-200 text-xs font-semibold">{testimonial.name}</p>
-          <p className="text-slate-600 dark:text-slate-400 text-xs">{testimonial.title}</p>
-          <p className="text-teal-600 dark:text-sky-300 text-xs font-medium uppercase tracking-wider">{testimonial.company}</p>
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     </motion.div>
   );
 }
@@ -171,8 +169,11 @@ export default function TestimonialGrid() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
 
-  const topRow = testimonialData.filter(t => t.position.row === 0);
-  const bottomRow = testimonialData.filter(t => t.position.row === 1);
+  // Group testimonials by column for masonry layout
+  const column1 = testimonialData.filter(t => t.position.col === 0);
+  const column2 = testimonialData.filter(t => t.position.col === 1);
+  const column3 = testimonialData.filter(t => t.position.col === 2);
+  const column4 = testimonialData.filter(t => t.position.col === 3);
 
   return (
     <section ref={sectionRef} className="w-full py-12 md:py-16 bg-slate-950 relative overflow-hidden">
@@ -181,37 +182,51 @@ export default function TestimonialGrid() {
         <div className="mx-auto max-w-3xl text-center" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-center items-start gap-4 mb-[-56px] z-10">
-          {topRow.map((testimonial, index) => (
-            <div 
-              className={`
-                ${index === 0 ? 'block' : ''} 
-                ${index === 1 ? 'md:block hidden' : ''} 
-                ${index === 2 ? 'lg:block hidden' : ''} 
-                ${index === 3 ? 'xl:block hidden' : ''}
-              `} 
-              key={testimonial.id}
-            >
-              <TestimonialCard testimonial={testimonial} index={index} />
-            </div>
-          ))}
-        </div>
-        
-        <div className="flex justify-center items-start gap-4 z-20 mt-4">
-          {bottomRow.map((testimonial, index) => (
-            <div 
-              className={`
-                ${index === 0 ? 'block' : ''} 
-                ${index === 1 ? 'md:block hidden' : ''} 
-                ${index === 2 ? 'lg:block hidden' : ''} 
-                ${index === 3 ? 'xl:block hidden' : ''}
-              `} 
-              key={testimonial.id}
-            >
-              <TestimonialCard testimonial={testimonial} index={index + topRow.length} />
-            </div>
-          ))}
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {/* Column 1 */}
+          <div className="flex flex-col gap-6">
+            {column1.map((testimonial, index) => (
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                index={index}
+              />
+            ))}
+          </div>
+          
+          {/* Column 2 */}
+          <div className="flex flex-col gap-6 md:mt-16">
+            {column2.map((testimonial, index) => (
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                index={index + column1.length}
+              />
+            ))}
+          </div>
+          
+          {/* Column 3 - Wide testimonial */}
+          <div className="flex flex-col gap-6 lg:mt-8 hidden lg:block lg:col-span-2 xl:col-span-1">
+            {column3.map((testimonial, index) => (
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                index={index + column1.length + column2.length}
+              />
+            ))}
+          </div>
+          
+          {/* Column 4 */}
+          <div className="flex flex-col gap-6 xl:mt-24 hidden xl:block">
+            {column4.map((testimonial, index) => (
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                index={index + column1.length + column2.length + column3.length}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
