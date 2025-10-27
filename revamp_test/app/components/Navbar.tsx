@@ -50,11 +50,11 @@ const Navbar: React.FC = () => {
               <Link
                 key={link.name}
                 href={link.href}
-                className="relative text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 font-normal text-base group"
+                className="relative text-slate-700 dark:text-slate-300 hover:text-primary-500 dark:hover:text-primary-300 transition-colors duration-200 font-normal text-base group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-gradient-to-r from-primary-400/60 to-secondary-400/60 group-hover:w-full transition-all duration-300 blur-[3px] shadow-[0_0_8px_rgba(45,212,191,0.5)]" />
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-primary-400 to-secondary-400 group-hover:w-full transition-all duration-300 shadow-[0_0_3px_rgba(45,212,191,0.8)]" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[3px] bg-gradient-to-r from-primary-400/80 to-secondary-400/80 group-hover:w-full transition-all duration-300 blur-[3px] shadow-[0_0_8px_rgba(45,212,191,0.7)]" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-gradient-to-r from-primary-400 to-secondary-400 group-hover:w-full transition-all duration-300 shadow-[0_0_5px_rgba(45,212,191,1)]" />
               </Link>
             ))}
           </div>
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
               key={link.name}
               href={link.href}
               onClick={closeMenu}
-              className="block px-4 py-2 text-base text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700/50 rounded-lg transition-all duration-200"
+              className="block px-4 py-2 text-base text-slate-700 dark:text-slate-300 hover:text-primary-500 dark:hover:text-primary-300 hover:bg-slate-200 dark:hover:bg-slate-700/50 rounded-lg transition-all duration-200"
             >
               {link.name}
             </Link>
