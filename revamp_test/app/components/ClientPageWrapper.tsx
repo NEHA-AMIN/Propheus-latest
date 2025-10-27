@@ -4,7 +4,6 @@ import HeroSection from './HeroSection';
 
 import HowItWorksSection from './HowItWorksSection';
 import CommandCenterSection from './CommandCenterSection';
-import TestimonialsSection from './TestimonialsSection';
 import CaseStudySection from './CaseStudySection';
 
 import SignalSection from './SignalSection';
@@ -16,7 +15,6 @@ export default function ClientPageWrapper() {
       <HeroSection />
       <HowItWorksSection />
       <CommandCenterSection />
-      <TestimonialsSection />
       <CaseStudySection />
       <SignalSection />
       <ScrollToTop />

@@ -49,8 +49,8 @@ const StoryBlock: React.FC<StoryBlockProps> = ({ title, description }) => {
             speed={50}
             cursor={true}
             repeat={0}
-            className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100 leading-tight custom-type-animation-cursor"
-            style={{ 
+            className="text-2xl md:text-3xl font-bold text-white dark:text-white leading-tight custom-type-animation-cursor"
+            style={{
               display: 'block',
               minHeight: '3.5rem' // Prevent layout shift during typing
             }}
@@ -59,7 +59,7 @@ const StoryBlock: React.FC<StoryBlockProps> = ({ title, description }) => {
 
         {/* Description with Fade Animation */}
         <motion.p
-          className="text-lg text-slate-700 dark:text-slate-400 leading-relaxed"
+          className="text-lg text-gray-200 dark:text-gray-200 leading-relaxed"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ 

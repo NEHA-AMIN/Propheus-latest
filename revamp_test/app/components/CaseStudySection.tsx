@@ -7,7 +7,7 @@ import CaseStudyCarousel, { CASE_STUDIES } from './CaseStudyCarousel';
 
 const CaseStudySection: React.FC = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-slate-100 dark:bg-slate-950 text-slate-900 dark:text-white">
+    <section className="py-12 md:py-16 lg:py-20 bg-slate-950 dark:bg-slate-950 text-slate-100 dark:text-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,8 +16,8 @@ const CaseStudySection: React.FC = () => {
           transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center mb-8 md:mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4">Success Stories</h2>
-          <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-3xl mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 text-white">Success Stories</h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto px-4">
             See how our AI solutions have transformed businesses across industries with measurable results.
           </p>
         </motion.div>
