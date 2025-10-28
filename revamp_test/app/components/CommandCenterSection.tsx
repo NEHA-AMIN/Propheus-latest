@@ -268,7 +268,7 @@ const CommandCenterSection: React.FC = () => {
   };
 
   return (
-    <section className="py-24 sm:py-32 bg-slate-950 dark:bg-black">
+    <section className="py-24 sm:py-32 bg-black">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-20">

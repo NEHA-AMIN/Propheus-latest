@@ -7,7 +7,7 @@ import CaseStudyCarousel, { CASE_STUDIES } from './CaseStudyCarousel';
 
 const CaseStudySection: React.FC = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-slate-950 dark:bg-slate-950 text-slate-100 dark:text-white">
+    <section className="py-12 md:py-16 lg:py-20 bg-black text-slate-100 dark:text-white">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

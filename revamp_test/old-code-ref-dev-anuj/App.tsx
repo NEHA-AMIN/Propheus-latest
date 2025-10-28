@@ -19,7 +19,7 @@ function Home() {
       <IndustriesSection />
       <HowItWorksSection />
       <CommandCenterSection />
-      {/* <TestimonialsSection /> */}
+      <TestimonialsSection />
       <CaseStudySection />
       <ValuePropositionSection />
       <SignalSection />

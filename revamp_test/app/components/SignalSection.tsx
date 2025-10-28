@@ -28,7 +28,7 @@ const SignalSection: React.FC = () => {
   return (
     <section
       id="signal"
-      className="relative overflow-hidden bg-slate-950 dark:bg-slate-950 py-28 sm:py-32"
+      className="relative overflow-hidden bg-black py-28 sm:py-32"
       aria-label="Subscribe to The Signal monthly intelligence briefing"
     >
       {/* Atmospheric visual: subtle teal signal waves behind headline */}
