@@ -2,6 +2,7 @@
 
 import HeroSection from './HeroSection';
 import FeatureSection from './FeatureSection';
+import DigitalAtlasSection from './DigitalAtlasSection';
 import HowItWorksSection from './HowItWorksSection';
 import CommandCenterSection from './CommandCenterSection';
 import CaseStudySection from './CaseStudySection';
@@ -14,6 +15,7 @@ export default function ClientPageWrapper() {
     <>
       <HeroSection />
       <FeatureSection />
+      <DigitalAtlasSection />
       <HowItWorksSection />
       <CommandCenterSection />
       <CaseStudySection />
