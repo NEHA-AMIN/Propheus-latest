@@ -282,49 +282,35 @@ const CaseStudyCarousel: React.FC<CaseStudyCarouselProps> = ({
   );
 };
 
-// Sample case studies data
+// Industry-focused case studies data
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    id: "cs1",
-    title: "AI-Powered Retail Analytics",
-    description: "How we helped a major retailer increase sales by 27% using predictive analytics and customer behavior modeling.",
-    imageUrl: "https://placehold.co/800x400/0f172a/e2e8f0?text=Retail+Analytics",
-    link: "#retail-case-study"
+    id: "retail",
+    title: "Retail",
+    description: "Turn each store's living context - people movement, weather, neighborhood, and place dynamics - into action. Power demand planning, site selection, promo recommendations, assortment, staffing, and more with Physical AI that understands the world outside your doors.",
+    imageUrl: "https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?q=80&w=1200&auto=format&fit=crop",
+    link: "#retail-industry-section"
   },
   {
-    id: "cs2",
-    title: "Healthcare Data Transformation",
-    description: "Transforming patient care with AI-driven insights that reduced readmission rates by 32%.",
-    imageUrl: "https://placehold.co/800x400/0f172a/e2e8f0?text=Healthcare+Data",
-    link: "#healthcare-case-study"
+    id: "cpg",
+    title: "CPG",
+    description: "Put each SKU in its real context - people movement, weather, sentiment, and place dynamics—to size market potential, fuel product recommendations, pick the right retailers, and optimize promo strategy and spend.",
+    imageUrl: "https://images.squarespace-cdn.com/content/v1/62c81216243f7563e0f792a7/045ea285-1972-4f56-a438-fba5dea4c9db/CPG+Packaging+Design.jpg",
+    link: "#cpg-industry-section"
   },
   {
-    id: "cs3",
-    title: "Financial Services Automation",
-    description: "Automating compliance processes saved this bank 15,000 hours annually while improving accuracy.",
-    imageUrl: "https://placehold.co/800x400/0f172a/e2e8f0?text=Financial+Services",
-    link: "#finance-case-study"
+    id: "o2o",
+    title: "O2O",
+    description: "Harness live context - people movement, events, weather, traffic, and supply - to power physical observability, tune dynamic pricing, sharpen demand planning, and localize product assortment across your O2O pickup, delivery, and ride zones.",
+    imageUrl: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=1200&auto=format&fit=crop",
+    link: "#o2o-industry-section"
   },
   {
-    id: "cs4",
-    title: "CPG Supply Chain Optimization",
-    description: "Reducing inventory costs by 18% while maintaining 99.8% fulfillment rates during global disruptions.",
-    imageUrl: "https://placehold.co/800x400/0f172a/e2e8f0?text=Supply+Chain",
-    link: "#cpg-case-study"
-  },
-  {
-    id: "cs5",
-    title: "Real Estate Market Intelligence",
-    description: "Providing predictive insights that helped developers identify emerging neighborhood trends 18 months ahead of competitors.",
-    imageUrl: "https://placehold.co/800x400/0f172a/e2e8f0?text=Real+Estate",
-    link: "#real-estate-case-study"
-  },
-  {
-    id: "cs6",
-    title: "Travel Industry Personalization",
-    description: "Creating hyper-personalized experiences that increased customer retention by 42% for this global travel platform.",
-    imageUrl: "https://placehold.co/800x400/0f172a/e2e8f0?text=Travel+Industry",
-    link: "#travel-case-study"
+    id: "travel",
+    title: "Travel",
+    description: "Use live context—crowds, events, weather, transit and venue status, and local price movements—to power physical observability, personalize discovery and recommendations, and drive dynamic pricing and smart bundling across flights, stays, and experiences.",
+    imageUrl: "https://images.unsplash.com/photo-1488085061387-422e29b40080?q=80&w=1200&auto=format&fit=crop",
+    link: "#travel-industry-section"
   }
 ];
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 interface VideoBackgroundProps {
   src: string;
@@ -9,49 +9,102 @@ interface VideoBackgroundProps {
 
 export default function VideoBackground({ src, className = "" }: VideoBackgroundProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  
+  // Use a ref to track component mount status
+  const isMountedRef = useRef(true);
 
   useEffect(() => {
-    // Handle video playback when component mounts
-    if (videoRef.current) {
-      const playVideo = () => {
-        videoRef.current?.play().catch(error => {
-          console.error("Video autoplay failed:", error);
-          // Don't show error in console for power saving interruptions
-          if (!error.message.includes("power")) {
-            console.error("Video autoplay failed:", error);
-          }
-          // Set loaded state anyway to ensure UI renders properly
-          setIsLoaded(true);
-        });
-      };
-      
-      playVideo();
-      
-      // Fallback for browsers with strict autoplay policies
-      const handleUserInteraction = () => {
-        playVideo();
-        document.removeEventListener('click', handleUserInteraction);
-      };
-      document.addEventListener('click', handleUserInteraction);
-      
-      // Try to play video again when tab becomes visible
-      document.addEventListener('visibilitychange', () => {
-        if (document.visibilityState === 'visible') {
-          playVideo();
+    const video = videoRef.current;
+    
+    if (!video) return;
+    
+    // Set mounted flag
+    isMountedRef.current = true;
+    
+    // Force load the video
+    video.load();
+    
+    // Function to handle video playback
+    const playVideo = async () => {
+      try {
+        // Check if component is still mounted
+        if (!isMountedRef.current || !document.body.contains(video)) return;
+        
+        // Ensure video is properly loaded
+        if (video.readyState < 2) { // HAVE_CURRENT_DATA or higher
+          await new Promise((resolve) => {
+            const loadHandler = () => {
+              if (isMountedRef.current) resolve(undefined);
+              video.removeEventListener('loadeddata', loadHandler);
+            };
+            video.addEventListener('loadeddata', loadHandler);
+          });
         }
-      });
-    }
-
-    // Cleanup function
-    return () => {
-      if (videoRef.current) {
-        videoRef.current.pause();
-        videoRef.current.src = "";
-        videoRef.current.load();
+        
+        // Check again if component is still mounted
+        if (!isMountedRef.current || !document.body.contains(video)) return;
+        
+        // Start playing
+        await video.play();
+        
+        // Ensure video is not stuck at the beginning
+        if (video.currentTime === 0) {
+          video.currentTime = 0.01;
+        }
+      } catch (error) {
+        // Only log errors if component is still mounted
+        if (isMountedRef.current && error instanceof Error) {
+          // Silent error handling to avoid console noise
+        }
       }
     };
-  }, []);
+    
+    // Play video immediately
+    playVideo();
+    
+    // Add event listeners for various scenarios
+    const events = ['click', 'touchstart', 'keydown'];
+    const handleUserInteraction = () => {
+      playVideo();
+      events.forEach(event => document.removeEventListener(event, handleUserInteraction));
+    };
+    
+    events.forEach(event => document.addEventListener(event, handleUserInteraction));
+    
+    // Handle visibility changes
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        playVideo();
+      } else {
+        video.pause();
+      }
+    };
+    
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    
+    // Handle video errors - with more graceful recovery
+    const handleVideoError = () => {
+      // Don't log error to console to avoid React DevTools noise
+      setTimeout(() => {
+        if (video && document.body.contains(video)) {
+          video.load();
+          playVideo();
+        }
+      }, 300);
+    };
+    
+    video.addEventListener('error', handleVideoError);
+    
+    // Cleanup
+    return () => {
+      events.forEach(event => document.removeEventListener(event, handleUserInteraction));
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      video.removeEventListener('error', handleVideoError);
+      video.pause();
+      video.src = "";
+      video.load();
+    };
+  }, [src]);
 
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
@@ -60,13 +113,19 @@ export default function VideoBackground({ src, className = "" }: VideoBackground
       
       <video
         ref={videoRef}
-        className={`absolute inset-0 w-full h-full object-cover z-[1] ${className}`}
+        className={`absolute inset-0 w-full h-full z-[1] ${className}`}
         autoPlay
         muted
         loop
         playsInline
-        onLoadedData={() => setIsLoaded(true)}
-        style={{ opacity: 1 }}
+        preload="auto"
+        style={{
+          opacity: 1,
+          width: '100vw',
+          height: '100vh',
+          objectFit: 'cover',
+          objectPosition: 'center center'
+        }}
       >
         <source src={src} type="video/mp4" />
         Your browser does not support the video tag.

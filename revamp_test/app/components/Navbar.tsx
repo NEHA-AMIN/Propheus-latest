@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import ThemeToggle from './ThemeToggle';
 
 const Navbar: React.FC = () => {
@@ -18,24 +19,20 @@ const Navbar: React.FC = () => {
           <div className="flex-1">
             <Link href="/" className="block cursor-pointer group">
               <div className="flex items-center transition-opacity duration-200 group-hover:opacity-80">
-                <span className="text-xl font-normal tracking-[0.15em] text-primary-400 uppercase">
-                  PR
-                  <span className="relative inline-block">
-                    <span className="text-primary-400">O</span>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 bg-primary-400 rounded-full" />
-                  </span>
-                  PHEUS
-                </span>
-                {/* Decorative dots */}
-                <div className="flex items-center ml-2 space-x-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <div key={i} className="w-1 h-1 bg-primary-400 rounded-full" />
-                  ))}
+                <div className="relative h-10 w-32">
+                  <Image
+                    src="/image.png"
+                    alt="Propheus Logo"
+                    fill
+                    style={{ objectFit: 'contain' }}
+                    className="transition-opacity duration-200"
+                    priority
+                  />
                 </div>
               </div>
-              <div className="text-xs text-slate-400 font-light ml-1 transition-opacity duration-200 group-hover:opacity-80">
+              {/* <div className="text-xs text-slate-400 font-light ml-1 transition-opacity duration-200 group-hover:opacity-80">
                 by Evam Labs
-              </div>
+              </div> */}
             </Link>
           </div>
 
