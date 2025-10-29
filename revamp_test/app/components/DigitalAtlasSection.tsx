@@ -46,16 +46,16 @@ const DigitalAtlasSection = () => {
               <div className="text-xs text-gray-400">239,781 block groups</div>
             </div> */}
 
-            <div className="relative mt-8 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(20,184,166,0.2)] border border-teal-500/10">
+            <div className="relative mt-8 rounded-xl overflow-hidden ">
               {/* Using an online GIF for Digital Atlas visualization */}
               <div className="w-full aspect-video bg-black/30 backdrop-blur-sm relative">
                 
-                {/* Online GIF implementation */}
+                {/* Local GIF implementation */}
                 <Image
-                  src="https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif"
+                  src="/DA gif .gif"
                   alt="Digital Atlas visualization"
-                  width={800}
-                  height={600}
+                  width={1200}
+                  height={1200}
                   className="w-full h-full object-cover opacity-90"
                 />
               </div>
