@@ -253,7 +253,7 @@ const CaseStudyCarousel: React.FC<CaseStudyCarouselProps> = ({
                       className="inline-block px-3 py-1.5 sm:px-4 sm:py-2 text-sm sm:text-base bg-teal-500 text-white rounded-md hover:bg-teal-600 transition-colors"
                       tabIndex={isActive ? 0 : -1}
                     >
-                      View Case Study
+                      Learn more
                     </a>
                   </div>
                 </div>

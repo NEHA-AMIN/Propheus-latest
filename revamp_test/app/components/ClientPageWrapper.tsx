@@ -1,6 +1,7 @@
 'use client';
 
 import HeroSection from './HeroSection';
+import MissionSection from './MissionSection';
 import FeatureSection from './FeatureSection';
 import DigitalAtlasSection from './DigitalAtlasSection';
 import HowItWorksSection from './HowItWorksSection';
@@ -15,6 +16,7 @@ export default function ClientPageWrapper() {
   return (
     <>
       <HeroSection />
+      <MissionSection />
       <DigitalAtlasSection />
       <FeatureSection />
       {/* <HowItWorksSection /> */}

@@ -50,7 +50,7 @@ const CaseStudySubPart = () => {
               <div className="rounded-xl overflow-hidden shadow-lg">
                 {/* Case Study GIF implementation */}
                 <Image
-                  src="/Case study metrics website propheus.gif"
+                  src="/casestudy.gif"
                   alt="Case Study metrics visualization"
                   width={1200}
                   height={1200}

@@ -58,7 +58,7 @@ const HowItWorksSection: React.FC = () => {
               Inference Process
             </span>
           </h3>
-          <p className="text-lg md:text-xl text-gray-200 dark:text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg md:text-xl text-gray-200 dark:text-gray-200 max-w-4xl text-left leading-relaxed mb-8">
             Digital Atlas orchestrates agents that continuously ingest, validate, and fuse multimodal signals in a domain-aware way - then convert them into action:
           </p>
         </div>

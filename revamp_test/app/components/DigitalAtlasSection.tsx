@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const DigitalAtlasSection = () => {
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden bg-[#0b0e14]">
+    <section className="relative py-24 sm:py-32 overflow-hidden bg-black">
       {/* Grid pattern background matching Industries section */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-20"
@@ -15,17 +15,19 @@ const DigitalAtlasSection = () => {
              }}>
         </div>
       </div>
+      
+      {/* Bottom border line for consistency with MissionSection */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-slate-800"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-8">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-          
-          {/* Left: Text */}
-          <div className="flex-1 space-y-6">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
+          {/* Left: Text - using 5 columns for text (similar to MissionSection's 3:9 ratio) */}
+          <div className="md:col-span-5 space-y-6">
             <div className="inline-flex items-center px-3 py-1 rounded-md bg-blue-900/40 border border-blue-700/30 text-blue-400 text-sm font-medium">
               <span className="mr-1">⚡</span> Supersonic Data Processing
             </div>
 
-            <h2 className="text-5xl font-bold text-white leading-tight mt-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mt-6">
               Digital Atlas powered by Physical AI
             </h2>
 
@@ -39,26 +41,22 @@ const DigitalAtlasSection = () => {
             </div>
           </div>
 
-          {/* Right: Image */}
-          <div className="flex-1 relative">
-            {/* <div className="absolute top-6 right-8 text-teal-400 text-sm font-medium z-10">
-              Digital Atlas USA
-              <div className="text-xs text-gray-400">239,781 block groups</div>
-            </div> */}
-
-            <div className="relative mt-8 rounded-xl overflow-hidden ">
-              {/* Using an online GIF for Digital Atlas visualization */}
-              <div className="w-full aspect-video bg-black/30 backdrop-blur-sm relative">
-                
-                {/* Local GIF implementation */}
-                <Image
-                  src="/DA gif .gif"
-                  alt="Digital Atlas visualization"
-                  width={1200}
-                  height={1200}
-                  className="w-full h-full object-cover opacity-90"
-                />
-              </div>
+          {/* Right: Image - using 7 columns for image */}
+          <div className="md:col-span-7">
+            <div className="relative rounded-xl overflow-hidden max-w-[90%] mx-auto">
+              {/* Local GIF implementation */}
+              <Image
+                src="/DA gif .gif"
+                alt="Digital Atlas visualization"
+                width={900}
+                height={600}
+                className="w-full h-auto opacity-90 rounded-xl"
+                priority
+                style={{
+                  objectFit: 'contain',
+                  aspectRatio: '16/9'
+                }}
+              />
             </div>
           </div>
         </div>
