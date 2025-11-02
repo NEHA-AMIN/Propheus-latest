@@ -111,7 +111,7 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl font-bold text-slate-100 mb-6">
-              Our Mission
+              Physical AI
             </h2>
             <p className="text-2xl text-teal-400 font-semibold leading-relaxed max-w-3xl mx-auto">
               "To make the physical world computable, so AI agents can reason about location, context, and human behavior with unprecedented precision."

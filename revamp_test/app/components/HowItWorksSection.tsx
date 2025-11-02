@@ -41,17 +41,13 @@ const HowItWorksSection: React.FC = () => {
   const lineScaleY = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-    <section 
+    <section
       id="how-it-works"
       ref={sectionRef}
-      className="relative py-24 sm:py-32 overflow-hidden bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage: "url('/how-it-works-bg.png')",
-        backgroundAttachment: 'fixed'
-      }}
+      className="relative py-24 sm:py-32 overflow-hidden bg-black"
     >
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-slate-950/90 dark:bg-slate-950/60 border-y border-slate-900 dark:border-slate-800"></div>
+      <div className="absolute inset-0 border-y border-slate-900 dark:border-slate-800"></div>
       
       <div className="relative z-10 container mx-auto px-6">
         {/* Section Header */}
@@ -62,7 +58,7 @@ const HowItWorksSection: React.FC = () => {
               Inference Process
             </span>
           </h3>
-          <p className="text-lg md:text-xl text-gray-200 dark:text-gray-200 max-w-4xl mx-auto leading-relaxed mb-8">
+          <p className="text-lg md:text-xl text-gray-200 dark:text-gray-200 max-w-4xl text-left leading-relaxed mb-8">
             Digital Atlas orchestrates agents that continuously ingest, validate, and fuse multimodal signals in a domain-aware way - then convert them into action:
           </p>
         </div>

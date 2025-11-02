@@ -28,7 +28,7 @@ const SignalSection: React.FC = () => {
   return (
     <section
       id="signal"
-      className="relative overflow-hidden bg-slate-950 dark:bg-slate-950 py-28 sm:py-32"
+      className="relative overflow-hidden bg-black py-28 sm:py-32"
       aria-label="Subscribe to The Signal monthly intelligence briefing"
     >
       {/* Atmospheric visual: subtle teal signal waves behind headline */}
@@ -61,7 +61,7 @@ const SignalSection: React.FC = () => {
           {/* Animated Headline with SplitText */}
           {hasAnimated ? (
             <h4 className="text-4xl md:text-5xl font-bold text-white dark:text-white tracking-tight">
-              If you've come this far, it means you found us..Interesting!
+              Subscribe to The Signal
             </h4>
           ) : (
             <SplitText
@@ -92,9 +92,7 @@ const SignalSection: React.FC = () => {
             }}
             viewport={{ once: true }}
           >
-            Subscribe to The Signal—our exclusive monthly intelligence briefing. We dissect emerging geospatial trends,
-            deconstruct successful market strategies, and deliver the critical insights that will define the next decade
-            of physical-world AI.
+            Our exclusive monthly Physical AI briefing. We dissect emerging geospatial trends, deconstruct successful enterprise strategies, and deliver the critical insights that will define the next decade of Physical AI.
           </motion.p>
 
           {/* Form: single elegant line with integrated button */}
