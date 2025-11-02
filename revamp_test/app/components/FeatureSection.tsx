@@ -12,11 +12,11 @@ const FeatureSection = () => {
       
       <div className="relative z-10 container mx-auto px-6">
         {/* Section heading */}
-        <div className="text-center mb-12">
+        {/* <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 max-w-4xl mx-auto leading-tight">
             Digital Atlas orchestrates agents that continuously ingest, validate, and fuse multimodal signals in a domain-aware way - then convert them into action:
           </h2>
-        </div>
+        </div> */}
         {/* Centered container with three horizontally aligned blocks */}
         <div className="flex flex-row justify-center items-start space-x-8 lg:space-x-16 overflow-x-auto pb-4">
           

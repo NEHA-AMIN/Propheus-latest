@@ -35,9 +35,9 @@ const DigitalAtlasSection = () => {
               <p className="text-xl text-gray-300 leading-relaxed">
                 Digital Atlas is the foundational engine that fuses real-world signals - places, weather, people movement, demographics, and consumer sentiment - into the most comprehensive knowledge representation of every place on earth.
               </p>
-              <p className="text-xl text-gray-300 leading-relaxed">
+              {/* <p className="text-xl text-gray-300 leading-relaxed">
                 It's not a data dump; it's decision-ready context.
-              </p>
+              </p> */}
             </div>
           </div>
 
