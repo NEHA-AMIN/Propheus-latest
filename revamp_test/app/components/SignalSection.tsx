@@ -65,7 +65,7 @@ const SignalSection: React.FC = () => {
             </h4>
           ) : (
             <SplitText
-              text="If you've come this far, it means you found us..Interesting!"
+              text="Subscribe to The Signal"
               className="text-4xl md:text-5xl font-bold text-white dark:text-white tracking-tight"
               delay={20}
               duration={0.4}

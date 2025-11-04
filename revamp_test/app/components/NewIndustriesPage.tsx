@@ -19,160 +19,204 @@ const resourcesData: Resource[] = [
   // Retail resources
   {
     id: "1",
-    title: "Store Performance Monitoring",
-    description: "Track performance of various stores, and aid new store site selection and store closure.",
+    title: "Physical Observability",
+    description: "Select a brand to view all stores with their competitive landscape on a live map. Drill into any store for rich profiles—store facts, neighborhood signals (footfall, income, anchors), and social buzz—to spot gaps, threats, and opportunities.",
     category: "Retail",
     image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "2",
-    title: "Demand Planning",
-    description: "Forecast demand more accurately using the Digital Atlas that incorporates numerous external signals such as stores in the vicinity, people movement, traffic, weather changes, crime and other real world events that have an impact on your store sales.",
-    category: "Retail",
-    image: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    id: "3",
-    title: "Lease Abstraction",
-    description: "Analyse thousands of legal documents and accurately answer any questions your team may have about historical leases, current rent, leases expected to renew, optimal rental for a building etc.",
-    category: "Retail",
-    image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    id: "4",
     title: "Site Selection",
-    description: "Predict potential sites to open new stores maximising expected sales while also minimising cannibalisation in existing stores leveraging the Digital Atlas.",
+    description: "Predict potential sites to open new stores, maximising expected sales while minimising cannibalisation of existing stores, leveraging the Digital Atlas.",
     category: "Retail",
     image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop"
   },
   {
-    id: "5",
-    title: "Assortment Planning",
-    description: "Plan the optimal assortment of products for each of your stores based on their locations, the demographics of consumers, the competing stores and other factors in that neighbourhood.",
+    id: "3",
+    title: "Demand Planning",
+    description: "Forecast store demand more accurately with the Digital Atlas by incorporating external signals—nearby stores, people movement, traffic, weather shifts, crime, and other real-world events that impact sales.",
+    category: "Retail",
+    image: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "4",
+    title: "Product Recommendation",
+    description: "Recommend the right products for each store, shelf, and shopper by leveraging the Digital Atlas—hyperlocal demographics, footfall patterns, neighborhood trends, weather, events, seasonality, inventory and price signals—to boost conversion, basket size, and sellthrough across channels.",
     category: "Retail",
     image: "https://images.unsplash.com/photo-1585386959984-a415522316d6?q=80&w=1200&auto=format&fit=crop"
   },
   {
-    id: "6",
-    title: "Retail Clustering",
-    description: "Group together your stores that are present in very similar territories with similar sales potential to identify gaps and growth opportunities.",
+    id: "5",
+    title: "Promotion Recommendation",
+    description: "Recommend the right offers, timing, and channels for each store and audience by leveraging the Digital Atlas—hyperlocal demographics, footfall patterns, weather, events, competitor activity, price elasticity, and inventory signals—to maximize uplift, ROI, and sell-through while minimizing cannibalization.",
     category: "Retail",
-    image: "https://images.unsplash.com/photo-1577412647305-991150c7d163?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    id: "7",
-    title: "Territory Mapping",
-    description: "Find the ideal locations for your distribution centers based on sales trends by store and territory.",
-    category: "Retail",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    id: "8",
-    title: "Sales Force Assistant",
-    description: "Let the AI Agent guide the field sales teams on daily activity and measure improvement in their productivity levels.",
-    category: "Retail",
-    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
-  },
-  
-  // CPG resources
-  {
-    id: "9",
-    title: "Promo Allocation",
-    description: "Accurately predict what promotions to apply in which territories/retail stores and for what time period using the Digital Atlas.",
-    category: "CPG",
     image: "https://images.unsplash.com/photo-1581091012184-7f8b7b88a6f3?q=80&w=1200&auto=format&fit=crop"
   },
+
+  // CPG resources
   {
-    id: "10",
+    id: "6",
     title: "Market Potential",
-    description: "Identify territories similar to high performing territories based on the Digital Atlas. This helps open up new growth opportunities.",
+    description: "Identify look-alike territories to your highest-performing areas using the Digital Atlas, so you can prioritize expansion and unlock new growth opportunities.",
     category: "CPG",
     image: "https://images.unsplash.com/photo-1565374395542-0ce1321e25eb?q=80&w=1200&auto=format&fit=crop"
   },
-  
-  // Automotive resources
+  {
+    id: "7",
+    title: "Retailer Selection",
+    description: "Prioritize the right retail partners and doors using the Digital Atlas—match category fit, shopper overlap, footfall and neighborhood profile, price tiers, promo intensity, and distribution gaps—to choose where to list first, sequence launches by market, and maximize velocity and ROI.",
+    category: "CPG",
+    image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "8",
+    title: "Demand Planning",
+    description: "Forecast demand more accurately across retailers, channels, and regions by leveraging the Digital Atlas—store coverage and footfall, category momentum, promotions and price changes, media and social buzz, weather and events, competitor activity, and inventory/lead-time signals - to improve S&OP, reduce stockouts, and raise sell-through.",
+    category: "CPG",
+    image: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "9",
+    title: "Product Recommendation",
+    description: "Recommend the right SKUs, pack sizes, and flavors for each retailer, store, and channel by leveraging the Digital Atlas—shopper segments and basket affinities, local trend and seasonality, weather and events, promo/price elasticity, competitor presence, and inventory/margin signals—to optimize assortments, drive cross-sell/upsell, and lift velocity and contribution margin.",
+    category: "CPG",
+    image: "https://images.unsplash.com/photo-1585386959984-a415522316d6?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "10",
+    title: "Promotion Recommendation",
+    description: "Recommend the right offers, timing, mechanics, and channels for each retailer and store by leveraging the Digital Atlas—shopper segments and price elasticity, footfall and seasonality, weather/events, competitor promos, media buzz, and inventory constraints—to maximize incremental lift and ROI while minimizing cannibalization and trade spend waste.",
+    category: "CPG",
+    image: "https://images.unsplash.com/photo-1581091012184-7f8b7b88a6f3?q=80&w=1200&auto=format&fit=crop"
+  },
+
+  // Online to Offline resources
   {
     id: "11",
-    title: "Vehicle Performance Monitoring",
-    description: "Utilize telematics data to construct models for enhancing vehicle performance optimization.",
-    category: "Automotive",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1200&auto=format&fit=crop"
+    title: "Physical Observability",
+    description: "Select a brand to view zones, restaurants, and stores with their competitive landscape on a live map. Drill into any node for site facts, neighborhood vibe (walkability, safety, nightlife/family-friendly), demand heat, and social buzz to guide placement, incentives, and operations.",
+    category: "Online to Offline",
+    image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "12",
-    title: "EV Charging Demand Modeling",
-    description: "Anticipate and meet electric vehicle charging demand efficiently with advanced modeling solutions.",
-    category: "Automotive",
-    image: "https://images.unsplash.com/photo-1601924638867-3ec6a2d40b09?q=80&w=1200&auto=format&fit=crop"
+    title: "Demand Planning",
+    description: "Turn real-world signals—people mobility, app/search traffic, weather, events, promo calendars, and waittime trends—into actionable plans: staffing rosters by daypart, kitchen prep lists, inventory allocations, rider/supply positioning, order caps, and buffer policies to hit SLAs while minimizing waste and stockouts.",
+    category: "Online to Offline",
+    image: "https://images.unsplash.com/photo-1532619187608-e5375cab36aa?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "13",
-    title: "Risk Prediction",
-    description: "Based on the terrain, weather, driving style and other factors, predict the risk parameters more accurately.",
-    category: "Automotive",
-    image: "https://images.unsplash.com/photo-1485463611229-2e5e4c214d1b?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    id: "14",
-    title: "EV Range Optimization",
-    description: "Analyze telematics data to examine road terrain and performance factors influencing EV battery range.",
-    category: "Automotive",
-    image: "https://images.unsplash.com/photo-1585951237319-198b6e356d29?q=80&w=1200&auto=format&fit=crop"
-  },
-  
-  // Logistics resources
-  {
-    id: "15",
-    title: "Warehouse Site Selection",
-    description: "Employ data-driven insights in selecting strategic warehouse locations for enhanced logistics efficiency.",
-    category: "Logistics",
-    image: "https://images.unsplash.com/photo-1581090700227-1e37b190418e?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    id: "16",
-    title: "Vehicle Route Optimization",
-    description: "Streamline logistics operations by optimizing vehicle routes for efficiency and cost-effectiveness.",
-    category: "Logistics",
-    image: "https://images.unsplash.com/photo-1578574577315-3fbeb0cecdc2?q=80&w=1200&auto=format&fit=crop"
-  },
-  
-  // BFSI resources
-  {
-    id: "17",
-    title: "Risk Assessment",
-    description: "Employ Spatial AI to assess risks for commercial properties, enhancing precision in underwriting and risk management strategies.",
-    category: "BFSI",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop"
-  },
-  {
-    id: "18",
-    title: "Fraud Detection",
-    description: "Leverage spatial data to detect irregularities in financial transactions, reducing fraud.",
-    category: "BFSI",
-    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1200&auto=format&fit=crop"
-  },
-  
-  // Telecom resources
-  {
-    id: "19",
-    title: "Campaign Optimization",
-    description: "Continuously learn from customer behavior, market trends, and business goals to design, launch, and optimize marketing campaigns in real time, balancing revenue growth, customer experience & long-term retention.",
-    category: "Telecom",
+    title: "Dynamic Pricing",
+    description: "Recommend time-and location-aware prices/offers across dine-in, takeaway, delivery, and in-store based on elasticity, live demand, competitor moves, inventory age/hold times, and weather/events—within brand guardrails to lift margin, conversion, and utilization.",
+    category: "Online to Offline",
     image: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?q=80&w=1200&auto=format&fit=crop"
   },
   {
+    id: "14",
+    title: "Product Assortment",
+    description: "Localize menus/SKUs and bundles per micro-market using shopper segments, basket affinities, ratings/reviews, seasonality, and walk-path heatmaps—setting core + local items, facings/portion sizes, and cross-sell packs to boost conversion, sell-through, and contribution.",
+    category: "Online to Offline",
+    image: "https://images.unsplash.com/photo-1585386959984-a415522316d6?q=80&w=1200&auto=format&fit=crop"
+  },
+
+  // Travel resources
+  {
+    id: "15",
+    title: "Physical Observability",
+    description: "View properties and nearby competitors on a live map. Drill into any location for a neighborhood vibe profile—walkability, safety, noise/nightlife vs. quiet, family-friendliness, transit access, events, weather patterns, and social sentiment—so travelers can pick the right area, timing, and plan with confidence.",
+    category: "Travel",
+    image: "https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "16",
+    title: "Personalized Discovery & Recommendations",
+    description: "Surfacing contextual signals like neighborhood vibe, proximity to experiences, and real-time demand to match travelers with the right destinations and stays earlier in their journey.",
+    category: "Travel",
+    image: "https://images.unsplash.com/photo-1520637836862-4d197d17c669?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "17",
+    title: "Dynamic Pricing & Bundling",
+    description: "AI-driven trip planning: connecting accommodations with nearby experiences, mobility options, and relevant content, turning passive browsing into a structured, bookable itinerary - all within the platform.",
+    category: "Travel",
+    image: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?q=80&w=1200&auto=format&fit=crop"
+  },
+
+  // FinTech resources
+  {
+    id: "18",
+    title: "Transaction Enrichment & Merchant Intelligence",
+    description: "Enrich transactions with real-time merchant data, improving customer statements and spending analytics.",
+    category: "FinTech",
+    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "19",
+    title: "Fraud Detection & Risk Management",
+    description: "Proactively detect fraud by cross-referencing transactions with real-time merchant location and status.",
+    category: "FinTech",
+    image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
     id: "20",
-    title: "Retail Insights",
-    description: "Queries and reasons across retail data to surface regional insights, product trends, churn signals, and network-performance correlations.",
-    category: "Telecom",
+    title: "Merchant Onboarding & Verification",
+    description: "Automate merchant onboarding and verification, reducing manual efforts and ensuring compliance.",
+    category: "FinTech",
     image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1200&auto=format&fit=crop"
   },
   {
     id: "21",
-    title: "Network Planning & Optimization",
-    description: "Identify optimal tower locations and mitigate congestion using real-world signals like mobility, terrain, weather, events, population shifts, and usage patterns.",
+    title: "Personalization",
+    description: "Deliver hyper-targeted offers based on merchant categories and customer spending for increased engagement.",
+    category: "FinTech",
+    image: "https://images.unsplash.com/photo-1520637736862-4d197d17c669?q=80&w=1200&auto=format&fit=crop"
+  },
+
+  // Real Estate resources
+  {
+    id: "22",
+    title: "Site Selection",
+    description: "Score locations with footfall/dwell, demographics/income, anchors & transit, safety/noise, zoning, competitor/supply density, and pipeline—prioritize sites and avoid cannibalization.",
+    category: "Real Estate",
+    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "23",
+    title: "Rent Prediction",
+    description: "Project future market rents by combining historical rent, economic indicators, and local market conditions with real-world signals—people mobility/footfall, listings & vacancy velocity, new permits/pipeline, neighborhood vibe (walkability/safety/noise), anchor POIs & transit access, events/seasonality, weather & climate risk—so pricing, renewals, and lease-ups stay ahead of demand.",
+    category: "Real Estate",
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "24",
+    title: "Property Valuation",
+    description: "Estimate dynamic value of a commercial property based on several indicators like current and future potential, neighbourhood attractiveness, change in demographics, change in tenant mix etc.",
+    category: "Real Estate",
+    image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=1200&auto=format&fit=crop"
+  },
+
+  // Telecom resources
+  {
+    id: "25",
+    title: "Retail Insights",
+    description: "Overlay real-world signals onto retail and network performance to explain why certain stores underperform or spike. Agentic AI reasons across subscriber clusters, ARPU bands, device mix, SIM activations, recharge behavior, network KPIs (coverage, throughput, congestion), and competitor presence to surface root causes and recommend corrective actions.",
+    category: "Telecom",
+    image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "26",
+    title: "Retailer Selection",
+    description: "Map current retail channel coverage against demand hotspots to identify opportunities for expansion. The Digital Atlas combines subscriber density, device upgrade propensity, footfall patterns, competitive presence, neighborhood income tiers, and channel saturation to score micro-markets and recommend the right areas to expand or consolidate retail partners to maximize growth.",
     category: "Telecom",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "27",
+    title: "Campaign Orchestration",
+    description: "Automatically orchestrate outbound campaigns (SMS, push, WhatsApp etc) by leveraging behavioral, network, and real-world signals. The agent filters campaigns in real-time - approving high-intent targets, queuing those approaching fatigue, and suppressing low-propensity segments, while understanding context like mobility, device lifecycle, churn risk pockets, event spikes, and competitor promotions. Result: higher conversion, lower fatigue, and smarter spend allocation.",
+    category: "Telecom",
+    image: "https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?q=80&w=1200&auto=format&fit=crop"
   }
 ];
 
@@ -189,11 +233,11 @@ const ResourceCard: React.FC<{ resource: Resource }> = ({ resource }) => {
     >
       <div
         className="relative aspect-square rounded-2xl overflow-hidden shadow-lg shadow-black/20 transition-all duration-500 ease-in-out
-        group-hover:shadow-xl group-hover:shadow-[#00a39a]/20 group-hover:scale-[1.05]"
+        group-hover:shadow-xl group-hover:shadow-[#00a39a]/20 group-hover:scale-[1.02]"
       >
         {/* Background Image with Gradient Overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-[1.08] group-hover:filter group-hover:brightness-90"
+          className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-in-out group-hover:scale-[1.08] group-hover:filter group-hover:brightness-75"
           style={{
             backgroundImage: `url(${resource.image})`,
             backgroundSize: 'cover',
@@ -201,28 +245,31 @@ const ResourceCard: React.FC<{ resource: Resource }> = ({ resource }) => {
           }}
         />
         
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-70 group-hover:opacity-85 transition-opacity duration-500" />
+        {/* Gradient Overlay - Enhanced on hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-70 group-hover:opacity-95 transition-opacity duration-500" />
         
         {/* Category Badge - Only show for specific categories */}
         {resource.category === "CPG" && (
-          <div className="absolute top-4 left-4">
+          <div className="absolute top-4 left-4 z-10">
             <span className="inline-block bg-blue-900/80 text-white text-xs font-medium px-2.5 py-1 rounded-md backdrop-blur-sm">
               {resource.category}
             </span>
           </div>
         )}
         
-        {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 transform transition-all duration-500 ease-in-out group-hover:translate-y-[-4px]">
-          <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-white transition-colors duration-300">
+        {/* Content Container with Slide-Up Animation */}
+        <div className="absolute bottom-0 left-0 right-0 p-6 transition-all duration-500 ease-in-out transform translate-y-0 group-hover:-translate-y-4">
+          {/* Title - Slides up with description */}
+          <h3 className="text-2xl font-bold text-white mb-3 transition-all duration-500 ease-in-out">
             {resource.title}
           </h3>
           
-          {/* Description - Always include but control visibility with opacity */}
-          <p className={`text-gray-200 text-sm transition-all duration-500 ease-in-out ${resource.description.length < 100 ? '' : 'opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0'}`}>
-            {resource.description}
-          </p>
+          {/* Description - Slides up from bottom on hover */}
+          <div className="max-h-0 overflow-hidden transition-all duration-500 ease-in-out group-hover:max-h-48">
+            <p className="text-gray-200 text-sm leading-relaxed opacity-0 transform translate-y-4 transition-all duration-500 ease-in-out group-hover:opacity-100 group-hover:translate-y-0">
+              {resource.description}
+            </p>
+          </div>
         </div>
       </div>
     </motion.div>
@@ -230,7 +277,7 @@ const ResourceCard: React.FC<{ resource: Resource }> = ({ resource }) => {
 };
 
 // Filter Categories
-const categories = ["All", "Retail", "CPG", "Automotive", "Logistics", "BFSI", "Telecom"];
+const categories = ["All", "Retail", "CPG", "Online to Offline", "Travel", "FinTech", "Real Estate", "Telecom"];
 
 export const NewIndustriesPage: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -340,5 +387,3 @@ export const NewIndustriesPage: React.FC = () => {
 };
 
 export default NewIndustriesPage;
-
-// Made with Bob
