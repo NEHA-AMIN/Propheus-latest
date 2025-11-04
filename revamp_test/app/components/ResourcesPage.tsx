@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { BackgroundPaths } from "@/components/ui/shadcn-io/background-paths";
 import { useTheme } from "../providers/ThemeProvider";
+import CaseStudiesGrid from "./CaseStudiesGrid";
 
 export type Resource = {
   id: string;
@@ -293,6 +294,9 @@ export const ResourcesPage: React.FC<ResourcesPageProps> = ({
 
           {/* Category filter buttons removed per request */}
         </div>
+
+        {/* Case Studies Grid Section */}
+        <CaseStudiesGrid />
 
         {/* Footer slot */}
         {footerSlot && (
