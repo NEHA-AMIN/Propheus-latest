@@ -1,65 +1,89 @@
 'use client';
-
-import React from 'react';
-import Image from 'next/image';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const DigitalAtlasSection = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  
+  // Track scroll progress through this section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"]
+  });
+
+  // Video moves from 150vh (far below) to 0vh (centered)
+  const videoY = useTransform(scrollYProgress, [0, 0.5], ['150vh', '0vh']);
+  
+  // Video opacity: starts at 0, becomes 1
+  const videoOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [0, 1, 1]);
+  
+  // Text opacity: stays 1 until 70% scroll, then fades to 0
+  const textOpacity = useTransform(scrollYProgress, [0, 0.4, 0.5], [1, 1, 0]);
+  
+  // Left corner text appears after video is in place (after 50% scroll)
+  const leftTextOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
+  const leftTextX = useTransform(scrollYProgress, [0.5, 0.7], [-50, 0]);
+
   return (
-    <section className="relative py-24 sm:py-32 overflow-hidden bg-black">
-      {/* Grid pattern background matching Industries section */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 opacity-20"
-             style={{
-               backgroundImage: 'linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)',
-               backgroundSize: '80px 80px'
-             }}>
-        </div>
-      </div>
+    <section 
+      ref={sectionRef}
+      className="relative bg-black h-[300vh]"
+    >
+      {/* Bottom border line for consistency */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-slate-800 z-30"></div>
       
-      {/* Bottom border line for consistency with MissionSection */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-slate-800"></div>
+      {/* Sticky container that holds both text and video */}
+      <div className="sticky top-0 h-screen w-full overflow-hidden">
+        
+        {/* Fixed Text in Center - Stays in place, fades out */}
+        <motion.div 
+          style={{ opacity: textOpacity }}
+          className="absolute inset-0 flex items-center justify-center pointer-events-none z-20"
+        >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white text-center px-6">
+            Digital Atlas
+          </h2>
+        </motion.div>
 
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
-          {/* Left: Text - using 5 columns for text (similar to MissionSection's 3:9 ratio) */}
-          <div className="md:col-span-5 space-y-6">
-            <div className="inline-flex items-center px-3 py-1 rounded-md bg-blue-900/40 border border-blue-700/30 text-blue-400 text-sm font-medium">
-              <span className="mr-1">⚡</span> Supersonic Data Processing
-            </div>
-
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mt-6">
-              Digital Atlas powered by Physical AI
-            </h2>
-
-            <div className="space-y-4 mt-8">
-              <p className="text-xl text-gray-300 leading-relaxed">
-                Digital Atlas is the foundational engine that fuses real-world signals - places, weather, people movement, demographics, and consumer sentiment - into the most comprehensive knowledge representation of every place on earth.
-              </p>
-              {/* <p className="text-xl text-gray-300 leading-relaxed">
-                It's not a data dump; it's decision-ready context.
-              </p> */}
-            </div>
+        {/* Video Element that moves up from below */}
+        <motion.div
+          style={{
+            y: videoY,
+            opacity: videoOpacity
+          }}
+          className="absolute inset-0 flex items-center justify-center z-10"
+        >
+          <div className="relative w-[80vw] h-[60vh] max-w-5xl">
+            <video
+              className="w-full h-full object-cover rounded-lg shadow-2xl"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src="/scan.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
+        </motion.div>
 
-          {/* Right: Image - using 7 columns for image */}
-          <div className="md:col-span-7">
-            <div className="relative rounded-xl overflow-hidden max-w-[90%] mx-auto">
-              {/* Local GIF implementation */}
-              <Image
-                src="/DA gif .gif"
-                alt="Digital Atlas visualization"
-                width={900}
-                height={600}
-                className="w-full h-auto opacity-90 rounded-xl"
-                priority
-                style={{
-                  objectFit: 'contain',
-                  aspectRatio: '16/9'
-                }}
-              />
-            </div>
+        {/* Bottom Left Corner Text - Appears after video is in place */}
+        <motion.div
+          style={{
+            opacity: leftTextOpacity,
+            x: leftTextX
+          }}
+          className="absolute left-8 md:left-12 bottom-12 md:bottom-16 z-20 max-w-md"
+        >
+          <div className="text-white space-y-4">
+            <h3 className="text-2xl md:text-3xl font-bold">
+              Perceives the Physical World
+            </h3>
+            <p className="text-lg md:text-xl text-gray-300">
+              Context Aware AI Agents continuously curate real-world data
+            </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
